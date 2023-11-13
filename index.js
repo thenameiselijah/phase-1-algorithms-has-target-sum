@@ -1,6 +1,25 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  let found = false;
+
+  for (let i = 0; i < array.length - 1; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === target) {
+        found = true;
+        break;
+      }
+    }
+    if (found) {
+      break;
+    }
+  }
+
+  return found;
 }
+
+// Testing the function
+const array = [3, 8, 12, 4, 11, 7];
+const target = 10;
+console.log(hasTargetSum(array, target)); 
 
 /* 
   Write the Big O time complexity of your function here
